@@ -80,21 +80,27 @@ export function Table(props) {
 
     const targetPositionRightBottom = new Vector3(-tableWidthScale / 2 + endPosition, 0, -tableHeightScale / 2 + endPosition);
     rightLegsBottom.current?.position.lerp(targetPositionRightBottom, delta * ANIM_SPEED);
-
   });
 
-  const texturePlate = useTexture(tablePicture);
-  const textureLegs = useTexture(legsPicture);
+  // const texturePlate = useTexture(tablePicture);
+  // const textureLegs = useTexture(legsPicture);
+
+  // !Фиксируем момент 
+  const [texturePlate, textureLegs] = useTexture([tablePicture, legsPicture])
 
   const initPlateTexture = () => {
     texturePlate.wrapS = THREE.RepeatWrapping;
     texturePlate.wrapT = THREE.RepeatWrapping;
+    texturePlate.needsUpdate = true;
     texturePlate.repeat.set(repeatTablePictureX, repeatTablePictureY);
+
   }
 
   const initLegsTexture = () => {
+    console.log(repeatTablePictureX, repeatTablePictureY, repeatLegsPictureX, repeatLegsPictureY);
     textureLegs.wrapS = THREE.RepeatWrapping;
     textureLegs.wrapT = THREE.RepeatWrapping;
+    textureLegs.needsUpdate = true;
     textureLegs.repeat.set(repeatLegsPictureX, repeatLegsPictureY);
   }
 

@@ -25,6 +25,8 @@ export const ConfiguratorProvider = ({ children }) => {
   const [repeatLegsPictureX, setRepeatLegsPictureX] = useState(1);
   const [repeatLegsPictureY, setRepeatLegsPictureY] = useState(1);
 
+  const [takeScreenshot, setTakeScreenshot] = useState(false);
+
   const initData = async (data) => {
     if (!data) data = defaultConfig;
 
@@ -43,6 +45,7 @@ export const ConfiguratorProvider = ({ children }) => {
       repeatLegsPictureY,
       tablePicture,
       legsPicture,
+
     } = data;
 
     setTableColor(tableColor)
@@ -105,6 +108,9 @@ export const ConfiguratorProvider = ({ children }) => {
         setRepeatLegsPictureY,
 
         initData,
+
+        takeScreenshot,
+        setTakeScreenshot
       }}
     >
       {children}

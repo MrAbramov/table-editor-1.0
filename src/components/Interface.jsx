@@ -12,6 +12,7 @@ import {
   Stack,
 } from "@mui/material";
 import { useConfigurator } from "../contexts/Configurator";
+import { useThree } from "@react-three/fiber";
 
 export const Interface = () => {
   const {
@@ -54,10 +55,14 @@ export const Interface = () => {
     repeatLegsPictureY,
     setRepeatLegsPictureY,
 
-    initData
+    initData,
+    setTakeScreenshot
   } = useConfigurator();
 
   function readFileDataAsBase64(file) {
+    // const newName = Date.now().toString() + file['name'];
+    // const _file = new File([file], newName)
+
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
 
@@ -168,7 +173,7 @@ export const Interface = () => {
             <OutlinedInput type="color" value={tableColor} onChange={(e) => setTableColor(e.target.value)} />
 
             <FormLabel>Table Load Picture</FormLabel>
-            <input type="file" name="file1" onChange={async (e) => e.target.value && setTablePicture(await readFileDataAsBase64(e.target.files[0]))} />
+            <input accept="image/png,image/gif,image/jpeg" type="file" name="file1" onChange={async (e) => e.target.value && setTablePicture(await readFileDataAsBase64(e.target.files[0]))} />
 
             <FormLabel>Repeat Picture</FormLabel>
             <Box sx={{ display: 'flex', gap: 5, }}>
@@ -231,7 +236,7 @@ export const Interface = () => {
             <OutlinedInput type="color" value={legsColor} onChange={(e) => setLegsColor(e.target.value)} />
 
             <FormLabel>Legs Load Picture</FormLabel>
-            <input type="file" name="file1" onChange={async (e) => e.target.value && setLegsPicture(await readFileDataAsBase64(e.target.files[0]))} />
+            <input accept="image/png,image/gif,image/jpeg" type="file" name="file1" onChange={async (e) => e.target.value && setLegsPicture(await readFileDataAsBase64(e.target.files[0]))} />
 
             <FormLabel>Repeat Picture</FormLabel>
             <Box sx={{ display: 'flex', gap: 5, }}>
@@ -256,6 +261,9 @@ export const Interface = () => {
 
             <Button variant="contained" type="button" onClick={(e) => importData(e, 'reset')}>
               Reset Data
+            </Button>
+            <Button variant="contained" type="button" onClick={() => setTakeScreenshot(true)}>
+              Screnshot
             </Button>
           </FormControl>
         </Box>
