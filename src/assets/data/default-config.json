@@ -1,0 +1,16 @@
+{
+    "tableWidth": 200,
+    "tableHeight": 100,
+    "tableDepth": 10,
+    "tableColor": "#0000ff",
+    "repeatTablePictureX": 1,
+    "repeatTablePictureY": 1,
+    "legsWidth": 10,
+    "legsHeight": 80,
+    "legs": 4,
+    "legsColor": "#0000ff",
+    "repeatLegsPictureX": 1,
+    "repeatLegsPictureY": 1,
+    "tablePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEX///+nxBvIAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
+    "legsPicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEX///+nxBvIAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII="
+}
